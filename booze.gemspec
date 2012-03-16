@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
   s.summary     = "Debug your Rails 3 app"
   s.description = "Adds a debug bar to your Rails 3 app"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib,views}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 end

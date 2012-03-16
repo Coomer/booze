@@ -1,7 +1,8 @@
 module Booze
   class Railtie < Rails::Railtie
-    config.before_initialize do
-      if Rails.env.development?
+    config.after_initialize do
+      debug_environments = Booze.config.debug_environments
+      if debug_environments.include?(Rails.env)
         # Once Rails starts processing the controller (or is done processing),
         # ensure the query store is empty
         ActiveSupport::Notifications.subscribe /(start_processing|process_action)\.action_controller/ do |name, start, finish, id, payload|

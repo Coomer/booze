@@ -1,6 +1,5 @@
 require "booze/configuration"
 require "booze/controller_mixins"
-require "booze/query_logger"
 require "booze/query_store"
 require "booze/railtie"
 

@@ -18,10 +18,5 @@ EOL
       response.body = response.body.gsub("</body>", "#{html}</body>")
     end
 
-    # Before filter
-    def clear_query_store
-      Booze::QueryStore.clear
-    end
-
   end
 end

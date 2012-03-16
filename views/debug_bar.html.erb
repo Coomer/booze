@@ -1,5 +1,37 @@
-<div id="debug_bar" style="position: absolute; top: 70px; right: 0; background: <%= config.tab_color %>; padding: 1px 4px 3px 4px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; font-family: helvetica, sans-serif; font-size: 9px; line-height: 1; z-index: 999999; text-align: center;">
-  <a href="#" onclick="$('#debug_bar').css({'width': '90%', 'z-index': '40000'}); $('#debug_bar ol').show(); return false;" style="color: <%= config.text_color %>; text-decoration: none;"><span style="display: block; font-size: 18px; font-weight: bold;"><%= queries.size %></span> queries</a>
+<style type="text/css">
+#booze_debug_bar {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: <%= config.tab_color %>;
+  padding: 1px 4px 3px 4px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-family: helvetica, sans-serif;
+  font-size: 9px;
+  line-height: 1;
+  z-index: 999999;
+  text-align: center;
+}
+#booze_debug_bar a {
+  color: <%= config.text_color %>;
+  text-decoration: none;
+}
+#booze_debug_bar a span {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+</style>
+<script type="text/javascript">
+var booze_js = function() {};
+booze_js.show_queries = function() {
+  $('#booze_debug_bar').css({'width': '90%', 'z-index': '40000'}).find('ol').show();
+  return false;
+};
+</script>
+<div id="booze_debug_bar">
+  <a href="#" onclick="return booze_js.show_queries();"><span><%= queries.size %></span> queries</a>
   <ol style="display: none; text-align: left;">
   <% queries.each do |q| %>
     <li><%= q %></li>

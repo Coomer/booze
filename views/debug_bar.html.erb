@@ -32,6 +32,9 @@
 #booze_debug_bar li {
   margin-bottom: 6px;
 }
+#booze_debug_bar a.close {
+  display: none;
+}
 
 #booze_debug_bar.open {
   width: 90%;
@@ -40,11 +43,24 @@
 #booze_debug_bar.open ol {
   display: block;
 }
+#booze_debug_bar.open a.close {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  padding: 2px 6px 3px 6px;
+  border: 1px solid <%= config.text_color %>;
+  font-size: 14px;
+}
 </style>
 <script type="text/javascript">
 var booze_js = function() {};
 booze_js.show_queries = function() {
   var bar = document.getElementById('booze_debug_bar').className = 'open';
+  return false;
+};
+booze_js.hide_queries = function() {
+  var bar = document.getElementById('booze_debug_bar').className = '';
   return false;
 };
 </script>
@@ -55,4 +71,5 @@ booze_js.show_queries = function() {
     <li><%= q %></li>
   <% end %>
   </ol>
+  <a href="#" class="close" onclick="return booze_js.hide_queries();">x</a>
 </div>

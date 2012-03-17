@@ -21,4 +21,6 @@ Example config/initializers/booze.rb:
       config.text_color = "#ffffff"
       # Array of Rails environments to enable debug bar for, default is ["development"]
       config.debug_environments = ["development", "test"]
+      # Filter out PRAGMA queries, default is false
+      config.filter_pragma_queries = true
     end

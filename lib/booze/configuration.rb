@@ -4,11 +4,13 @@ module Booze
     attr_accessor :tab_color
     attr_accessor :text_color
     attr_accessor :debug_environments
+    attr_accessor :filter_pragma_queries
 
     def initialize
       @tab_color ||= "#ff0099"
       @text_color ||= "#ffffff"
       @debug_environments ||= ["development"]
+      @filter_pragma_queries = false
     end
 
     # Setter to ensure debug_environments is Array

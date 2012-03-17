@@ -22,17 +22,29 @@
   font-size: 18px;
   font-weight: bold;
 }
+#booze_debug_bar ol {
+  display: none;
+  text-align: left;
+}
+
+#booze_debug_bar.open {
+  width: 90%;
+  z-index: 40000;
+}
+#booze_debug_bar.open ol {
+  display: block;
+}
 </style>
 <script type="text/javascript">
 var booze_js = function() {};
 booze_js.show_queries = function() {
-  $('#booze_debug_bar').css({'width': '90%', 'z-index': '40000'}).find('ol').show();
+  var bar = document.getElementById('booze_debug_bar').className = 'open';
   return false;
 };
 </script>
 <div id="booze_debug_bar">
   <a href="#" onclick="return booze_js.show_queries();"><span><%= queries.size %></span> queries</a>
-  <ol style="display: none; text-align: left;">
+  <ol>
   <% queries.each do |q| %>
     <li><%= q %></li>
   <% end %>

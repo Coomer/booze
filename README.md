@@ -6,7 +6,7 @@ A gem that provides a debug bar for Rails 3 applications.
 
 In your Gemfile, add the following to get booze to start working. Out of the box, the gem shows debug information when you're running a Rails app in development mode.
 
-    gem "booze"
+    gem "booze", :git => "git://github.com/Coomer/booze.git"
 
 ## Configuration
 

@@ -8,5 +8,8 @@ describe HomeController do
       get :index
       expect(response.body).to match /booze_debug_bar/
     end
+
+    pending "doesn't render debug bar in JSON"
+    pending "doesn't render debug bar if no closing body tag"
   end
 end

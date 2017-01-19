@@ -1,6 +1,6 @@
 # booze
 
-A gem that provides a debug bar for Rails 3 applications.
+A gem that provides a debug bar for Rails 3.2/4.x applications.
 
 ## Installation
 
@@ -24,3 +24,14 @@ Example config/initializers/booze.rb:
       # Filter out PRAGMA queries, default is false
       config.filter_pragma_queries = true
     end
+
+## Running Tests
+
+There is a rspec test suite covering basic functionality. The tests include specs in `spec/` and `spec_without_booze/`, and a dummy Rails 4.2 app in `spec/dummy/`
+
+To run them:
+
+    git clone https://github.com/Coomer/booze.git
+    cd booze
+    bundle install
+    bundle exec rake

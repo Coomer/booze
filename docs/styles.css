@@ -1,0 +1,33 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 3rem;
+  font-family: helvetica, sans-serif;
+  color: #444;
+  line-height: 1.4;
+}
+h1 {
+  margin: 0;
+  letter-spacing: -0.25rem;
+  font-size: 5rem;
+  line-height: 1;
+}
+header p {
+  font-style: italic;
+  color: #777;
+}
+p {
+  margin: 0 0 30px 0;
+}
+a {
+  color: #f57;
+}
+a:hover {
+  color: #f79;
+}
+ol li {
+  margin-bottom: 1rem;
+}

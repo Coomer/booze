@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>booze, a debug bar ruby gem for rails</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>booze</h1>
+    <p>A debug bar for rails</p>
+  </header>
+  <p>
+    I still write traditional Rails apps (not just using Rails as an API for the frontend), and when doing so find it useful to immediately see a query count on generated pages. This allows me to easily detect n+1 queries.
+  </p>
+
+  <p>
+    This is where <b>booze</b>, a ruby gem I wrote for this, comes into play.
+  </p>
+  <h3>How it Works</h3>
+  <ol>
+    <li>
+      A railtie subscribes to ActiveSupport::Notifications to save queries in memory as a controller action runs. Queries are cleared when the action is done performing.
+    </li>
+    <li>
+      The railtie adds an after_filter to display a debug bar right before the closing &lt;/body&gt; tag.
+    </li>
+    <li>
+      This debug bar has the total query count and can be expanded to show all queries used to render the page.
+    </li>
+  </ol>
+  <p class="gh-link">
+    <a href="https://github.com/Coomer/booze" title="booze source code and readme">View source &amp; README on Github</a>
+  </p>
+</body>
+</html>

@@ -22,6 +22,11 @@ load 'rails/tasks/statistics.rake'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new('spec')
 
-task :default => :spec
+desc "Run specs without using booze"
+task :spec_without_booze do
+  sh("bundle exec rspec spec_without_booze")
+end
+
+task :default => [:spec, :spec_without_booze]
 
 Bundler::GemHelper.install_tasks

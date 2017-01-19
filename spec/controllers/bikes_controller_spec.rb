@@ -26,7 +26,15 @@ describe BikesController do
       expect(response.body).to match /select count.*from.*bikes/i
     end
 
-    pending "doesn't render debug bar in JSON"
-    pending "doesn't render debug bar if no closing body tag"
+    it "doesn't render debug bar in JSON" do
+      get :index, format: :json
+      expect(response.body).not_to match /booze_debug_bar/
+    end
+
+    it "doesn't render debug bar if no closing body tag" do
+      get :no_layout
+      expect(response.body).not_to match /booze_debug_bar/
+    end
   end
+
 end

@@ -10,14 +10,14 @@ Gem::Specification.new do |s|
   s.authors     = ["Christian Coomer"]
   s.email       = ["ccoomer@christiancoomer.com"]
   s.homepage    = "http://cisforcoomer.com/"
-  s.summary     = "Debug your Rails 3 app"
-  s.description = "Adds a debug bar to your Rails 3 app"
+  s.summary     = "Debug bar for rails"
+  s.description = "Adds a debug bar to your Rails 3.2/4.x app"
+  s.licenses    = ["MIT"]
 
   s.files = Dir["{app,config,db,lib,views}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_development_dependency "rails", "~> 4.2.6"
-
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "sqlite3"
 end

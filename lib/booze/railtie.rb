@@ -26,7 +26,7 @@ module Booze
         ActionController::Base.send(:include, Booze::ControllerMixins)
 
         # Create an after filter to display the debug bar
-        ActionController::Base.send(:after_filter, :display_debug_bar)
+        ActionController::Base.send(:after_action, :display_debug_bar)
       end
     end
   end
